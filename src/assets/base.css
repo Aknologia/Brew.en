@@ -2,7 +2,6 @@
 
 
 /* color palette from <https://github.com/vuejs/theme> */
-/*
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -23,8 +22,9 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+  --vt-c-text-dark-3: rgba(235, 235, 235, 0.90);
 }
-
+/*
 // semantic color variables for this project
 :root {
   --color-background: var(--vt-c-white);
@@ -57,17 +57,20 @@
 
 /* Color palette from : <https://colorhunt.co/palette/13005a00337c1c82ad03c988> */
 :root {
-    --color-background: #0e0a2c;
-    --color-background-soft: #293c60;
-    --color-background-mute: #17036b;
+    --color-background:  var(--vt-c-black);
+    --color-background-soft: var(--vt-c-black-soft);
+    --color-background-mute: var(--vt-c-black-mute);
 
-    --color-border: rgba(84, 84, 84, 0.48);
-    --color-border-hover: rgba(84, 84, 84, 0.65);
+    --color-border: var(--vt-c-divider-dark-2);
+    --color-border-hover: var(--vt-c-divider-dark-1);
 
-    --color-heading: #ffffff;
-    --color-text: rgba(235, 235, 235, 0.64);
+    --color-heading: var(--vt-c-text-dark-1);
+    --color-text: var(--vt-c-text-dark-2);
+    --color-text-active: var(--vt-c-text-dark-3);
 
     --section-gap: 160px;
+
+    --heading-size: 42px;
 }
 
 *,
@@ -80,7 +83,7 @@
 }
 
 body {
-    margin-top: 42px;
+    margin-top: calc(var(--heading-size) + 1em);
     min-height: 100vh;
     color: var(--color-text);
     background: var(--color-background);

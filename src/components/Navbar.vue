@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg fixed-top bg-dark bg-transparent">
+  <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container-fluid">
       <router-link class="navbar-brand ms-2" to="/">Brew.en</router-link>
       <button class="navbar-toggler" type="button" aria-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,13 +50,43 @@
   }
 
   .navbar {
-    color: #fff;
-    transition: background-color 0.5s ease, box-shadow 0.5s ease, padding 0.5s ease;
+    transition: background-color 0.2s ease-out, box-shadow 0.2s ease-out;
   }
 
-  .navbar-scrolled .nav-link,
-  .navbar-scrolled .navbar-brand {
-    color: #fff;
-    background-color: var(--color-background-soft);
+  .navbar .nav-link {
+    color: var(--color-text);
+  }
+
+  .navbar .nav-link.active {
+    color: var(--color-text-active);
+  }
+  .navbar .nav-link.active::after {
+    content: " ";
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    position: absolute;
+    width: 80%;
+
+    border-bottom: 2px solid var(--color-text-active);
+    animation: 0.1s ease-out 1 growth;
+  }
+
+  @keyframes growth {
+    from {
+      width: 0;
+    }
+    to {
+      width: 80%;
+    }
+  }
+
+  .navbar .navbar-brand {
+    color: var(--color-heading);
   }
 </style>
